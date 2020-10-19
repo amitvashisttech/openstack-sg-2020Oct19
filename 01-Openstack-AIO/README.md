@@ -65,3 +65,9 @@ vagrant.exe ssh <nameofyourVM>
    yum update -y
    yum install openstack-packstack -y 
 ```
+
+
+## Excute your Packstack AllinOne Installation
+```
+ packstack --answer-file 2020Oct19-answer.conf
+```
