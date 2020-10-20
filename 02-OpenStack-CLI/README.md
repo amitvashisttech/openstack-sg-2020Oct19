@@ -321,7 +321,7 @@ Objective 1: Login to Horizon as User lisa, scope to project admin.
 Create a New Public Image:
 • Image Name: system-3.5
 • Image Description: Standard Image v 3.5 - Authorised for Production Systems
-• Source Type: File
+• Source Type: qcow2
 • File: cirros-0.3.5-x86_64-disk.img
 • Format: qcow2
 • Visibility: Public
@@ -333,7 +333,7 @@ Objective 2 : Login to Horizon as User john, scope to project crm-dev.
 Create a New Private Image:
 • Image Name: devOS-3.5
 • Image Description: Development Version of System Image v 3.5
-• Source Type: File
+• Source Type: qcow2
 • File: cirros-0.3.5-x86_64-disk.img
 • Format: qcow2
 • Visibility: Private
