@@ -288,7 +288,21 @@ Objective 9: Create a group in non-default domain:
 • Assign a Role admin to Group admins in Project german-rnd in Domain german-sub.
 ```
 
-Objective 10: Create openrc files in /home/coa for Users:
+Objective 10: Create a New Service in Service Catalog:
+```
+• Service Name: ceilometer
+• Description: Telemetry
+• Service Type: metering
+```
+
+Objective 11 : Create New Service Endpoints for Service Type metering in Region RegionOne:
+```
+• Interface public with URL http://controller:8777
+• Interface internal with URL http://controller:8777
+• Interface admin with URL http://controller:8777
+```
+
+Objective 12: Create openrc files in /home/coa for Users:
 ```
 • john
 • amy
