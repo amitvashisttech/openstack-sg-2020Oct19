@@ -167,3 +167,37 @@ Repeat User Password:
 +---------------+------------------------+--------------------+------------------------+--------+--------+-----------+
 [root@openstack ~(keystone_admin)]#
 ```
+
+## Lab 2 
+Objective 1 : Create a new Project:
+```
+• Name: crm-dev
+• Description: New CRM Service Development Environment
+• Enabled: True
+• Default Quotas
+```
+
+Objective 2: Create a New User:
+```
+• User Name: john
+• Description: John – Developer in New CRM Service Development Project
+• Email: john@coa.lab
+• Password: openstack
+• Primary project: crm-dev
+• Role: user
+• Enabled: True
+```
+
+Objective 3: Create a New User – the Admin user for several Projects:
+```
+• User Name: lisa
+• Description: Lisa – Admin for all Projects
+• Email: lisa@coa.lab
+• Password: openstack
+• Primary project: admin
+• Role: admin
+• Enabled: True
+```
+Objective 4: Assign a role admin to User lisa in Project crm-dev.
+
+
