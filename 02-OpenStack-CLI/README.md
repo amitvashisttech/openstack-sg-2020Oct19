@@ -1,12 +1,54 @@
-#
+# Power on your Vagrant VM.
 
- openstack --os-username admin --os-password openstack --os-project-name admin --os-user-domain-name Default --os-project-domain-name Default --os-auth-url http://172.31.0.110:5000/v3 --os-identity-api-version 3 image list
+## Change Dir to SG Git Repo - 01-Openstack-AIO/
+
+```
+$ vagrant.exe status
+Current machine states:
+
+openstack                 running (virtualbox)
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.
+socopenstack01@socstack24 MINGW64 ~/01-Openstack-AIO
+```
+
+## In order to login your openstack VM
+```
+$ vagrant.exe ssh openstack
+Last login: Mon Oct 19 18:40:28 2020 from 10.0.2.2
+```
+
+## Now you login to openstack VM with Vagrant User, form here you should become Super User (root)
+```
+[vagrant@openstack ~]$ sudo su -
+Last login: Tue Oct 20 02:51:52 UTC 2020 on pts/0
+[root@openstack ~]# 
+```
+
+
+
+## Let try to run some openstack CLI Commands 
+
+```
+[root@openstack ~]# openstack --os-username admin --os-password openstack --os-project-name admin --os-user-domain-name Default --os-project-domain-name Default --os-auth-url http://172.31.0.110:5000/v3 --os-identity-api-version 3 image list
 +--------------------------------------+---------------------+--------+
 | ID                                   | Name                | Status |
 +--------------------------------------+---------------------+--------+
 | ad78bd79-e9b6-41b4-b316-4d7e5dfbc4ad | plentree-test-image | active |
 +--------------------------------------+---------------------+--------+
+```
 
+
+## To intract & adminstartor your Openstack you can use keystone rc file.
+```
+[root@openstack ~]# ls
+anaconda-ks.cfg  keystonerc_admin  openstack-sg-2020Oct19  original-ks.cfg  packstackca
+[root@openstack ~]# source keystonerc_admin
+[root@openstack ~(keystone_admin)]#
+```
 
 
 ## List & Create New Project
