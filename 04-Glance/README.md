@@ -72,10 +72,10 @@ to 45
 
 ##Lab2:  Managing Images on Command Line 
 
+Download CirrOS 4.0 from https://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
+
 Objective 1: Create a New Public Image:
 ```
-Download CirrOS 4.0 from https://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-
-disk.img to /home/coa.
 Use openrc file to set authentication context to User lisa in Project admin.
 • Image File: cirros-0.4.0-x86_64-disk.img
 • Image Description: Standard Image v 4.0 – Authorised for Production Systems
@@ -83,3 +83,31 @@ Use openrc file to set authentication context to User lisa in Project admin.
 • Image Name: system-4.0
 ```
 
+Objective 2: Share the Image devOS-3.5 with a project sales-crm.
+```
+Use openrc file to set authentication context to User lisa in project crm-dev.
+```
+
+Objective 3: Download the Image devOS-3.5 to a local file /home/coa/devOS-3.5.
+```
+Use openrc file to set authentication context to User amy in project sales-crm.
+```
+
+Objective 4 : Create a New Private Image:
+```
+Use openrc file to set authentication context to User amy in project sales-crm.
+
+• Image File: devOS-3.5
+• Image Description: New Image v 3.5 – Authorised for Testing Systems
+• Image Visibility: Private
+• Image Name: testOS-3.5
+```
+
+Objective 5 : 
+```
+Use openrc file to set authentication context to User amy in project sales-crm.
+Modify Image Property for Image testOS-3.5:
+• Set Minimum RAM to 256
+Modify Image Metadata for Image testOS-3.5:
+• Set Key os_shutdown_timeout to Value 50
+```
