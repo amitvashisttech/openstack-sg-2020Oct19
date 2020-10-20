@@ -309,3 +309,42 @@ Objective 12: Create openrc files in /home/coa for Users:
 • lisa
 • toby
 ```
+
+# Glance Demo.
+
+## Managing Images in Horizon Dashboard
+
+Download CirrOS 3.5 image from https://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img to your local disk.
+
+Objective 1: Login to Horizon as User lisa, scope to project admin.
+```
+Create a New Public Image:
+• Image Name: system-3.5
+• Image Description: Standard Image v 3.5 - Authorised for Production Systems
+• Source Type: File
+• File: cirros-0.3.5-x86_64-disk.img
+• Format: qcow2
+• Visibility: Public
+• Protected: No
+```
+
+Objective 2 : Login to Horizon as User john, scope to project crm-dev.
+```
+Create a New Private Image:
+• Image Name: devOS-3.5
+• Image Description: Development Version of System Image v 3.5
+• Source Type: File
+• File: cirros-0.3.5-x86_64-disk.img
+• Format: qcow2
+• Visibility: Private
+• Protected: No
+```
+
+Objective 3 : Login to Horizon as User john, scope to project crm-dev.
+```
+Edit Image Properties for Image devOS-3.5:
+• Set Minimum RAM (MB) to 512
+Edit Image Metadata:
+• Add Shutdown Behaviour -> Shutdown timeout to Existing Metadata and set value
+to 45
+```
