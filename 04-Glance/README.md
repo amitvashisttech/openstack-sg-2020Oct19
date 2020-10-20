@@ -70,4 +70,16 @@ to 45
 
 
 
-##Lab2:  Managing Images
+##Lab2:  Managing Images on Command Line 
+
+Objective 1: Create a New Public Image:
+```
+Download CirrOS 4.0 from https://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-
+disk.img to /home/coa.
+Use openrc file to set authentication context to User lisa in Project admin.
+• Image File: cirros-0.4.0-x86_64-disk.img
+• Image Description: Standard Image v 4.0 – Authorised for Production Systems
+• Image Visibility: Public
+• Image Name: system-4.0
+```
+
