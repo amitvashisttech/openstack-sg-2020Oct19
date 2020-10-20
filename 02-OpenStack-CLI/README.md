@@ -167,3 +167,184 @@ Repeat User Password:
 +---------------+------------------------+--------------------+------------------------+--------+--------+-----------+
 [root@openstack ~(keystone_admin)]#
 ```
+
+## Lab 2 
+Objective 1 : Create a new Project:
+```
+• Name: crm-dev
+• Description: New CRM Service Development Environment
+• Enabled: True
+• Default Quotas
+```
+
+Objective 2: Create a New User:
+```
+• User Name: john
+• Description: John – Developer in New CRM Service Development Project
+• Email: john@coa.lab
+• Password: openstack
+• Primary project: crm-dev
+• Role: user
+• Enabled: True
+```
+
+Objective 3: Create a New User – the Admin user for several Projects:
+```
+• User Name: lisa
+• Description: Lisa – Admin for all Projects
+• Email: lisa@coa.lab
+• Password: openstack
+• Primary project: admin
+• Role: admin
+• Enabled: True
+```
+Objective 4: Assign a role admin to User lisa in Project crm-dev.
+
+Objective 5: Create a New Group:
+```
+• Group Name: admins
+• Description: Cloud Admin Users
+• Add User lisa to Group admins.
+```
+
+Objective 6: Create a New Role:
+```
+• Role name: dev
+• Add an additional role dev to User john in Project crm-dev.
+```
+
+
+## Lab 3
+
+Objective 1: Create a new Project Using OpenStack Client (OSC):
+```
+• Name: sales-crm
+• Description: Sales Department CRM - Production Environment
+• Domain: Default
+• Enabled: True
+• Default Quotas
+```
+
+Objective 2: Create a New User:
+```
+• User Name: amy
+• Description: Amy – Sales Department CRM Operations Specialist
+• Email: amy@coa.lab
+• Password: openstack
+• Primary project: sales-crm
+• Domain: Default
+• Enabled: True
+```
+
+Objective 3 : Assign a Role user to User amy in Project sales-crm.
+
+Objective 4 :Create a New Domain:
+```
+• Domain name: german-sub
+• Description: Domain for German Subsidiary Projects
+```
+
+Objective 5 : Create a New Project in non-default domain:
+```
+• Name: german-rnd
+• Description: R&D Project for German Subsidiary
+• Domain: german-sub
+• Enabled: True
+• Default Quotas
+```
+
+Objective 6 : Create a New User in non-default domain:
+```
+• User name: toby
+• Description: Toby - Admin User for Germain Subsidiary Projects
+• Email: toby@coa.lab
+• Password: openstack
+• Domain: german-sub
+• Primary project: german-rnd
+• Enabled: True
+```
+
+Objective 7: Create a New Role in Default domain:
+```
+• Role name: ops
+• Domain: Default
+• Add an additional role ops to User amy in Project sales-crm.
+```
+
+Objective 8: Create a Group in Default domain:
+```
+• Name: developers
+• Description: Developers
+• Domain: Default
+• Add User john to Group developers.
+```
+
+Objective 9: Create a group in non-default domain:
+```
+• Name: admins
+• Description: Admin Users in German Subsidiary
+• Domain: german-sub
+• Add User toby to Group admins.
+• Assign a Role admin to Group admins in Project german-rnd in Domain german-sub.
+```
+
+Objective 10: Create a New Service in Service Catalog:
+```
+• Service Name: ceilometer
+• Description: Telemetry
+• Service Type: metering
+```
+
+Objective 11 : Create New Service Endpoints for Service Type metering in Region RegionOne:
+```
+• Interface public with URL http://controller:8777
+• Interface internal with URL http://controller:8777
+• Interface admin with URL http://controller:8777
+```
+
+Objective 12: Create openrc files in /home/coa for Users:
+```
+• john
+• amy
+• lisa
+• toby
+```
+
+# Glance Demo.
+
+## Managing Images in Horizon Dashboard
+
+Download CirrOS 3.5 image from https://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img to your local disk.
+
+Objective 1: Login to Horizon as User lisa, scope to project admin.
+```
+Create a New Public Image:
+• Image Name: system-3.5
+• Image Description: Standard Image v 3.5 - Authorised for Production Systems
+• Source Type: qcow2
+• File: cirros-0.3.5-x86_64-disk.img
+• Format: qcow2
+• Visibility: Public
+• Protected: No
+```
+
+Objective 2 : Login to Horizon as User john, scope to project crm-dev.
+```
+Create a New Private Image:
+• Image Name: devOS-3.5
+• Image Description: Development Version of System Image v 3.5
+• Source Type: qcow2
+• File: cirros-0.3.5-x86_64-disk.img
+• Format: qcow2
+• Visibility: Private
+• Protected: No
+```
+
+Objective 3 : Login to Horizon as User john, scope to project crm-dev.
+```
+Edit Image Properties for Image devOS-3.5:
+• Set Minimum RAM (MB) to 512
+Edit Image Metadata:
+• Add Shutdown Behaviour -> Shutdown timeout to Existing Metadata and set value
+to 45
+```
