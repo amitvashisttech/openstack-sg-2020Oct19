@@ -200,4 +200,98 @@ Objective 3: Create a New User – the Admin user for several Projects:
 ```
 Objective 4: Assign a role admin to User lisa in Project crm-dev.
 
+Objective 5: Create a New Group:
+```
+• Group Name: admins
+• Description: Cloud Admin Users
+• Add User lisa to Group admins.
+```
 
+Objective 6: Create a New Role:
+```
+• Role name: dev
+• Add an additional role dev to User john in Project crm-dev.
+```
+
+
+## Lab 3
+
+Objective 1: Create a new Project Using OpenStack Client (OSC):
+```
+• Name: sales-crm
+• Description: Sales Department CRM - Production Environment
+• Domain: Default
+• Enabled: True
+• Default Quotas
+```
+
+Objective 2: Create a New User:
+```
+• User Name: amy
+• Description: Amy – Sales Department CRM Operations Specialist
+• Email: amy@coa.lab
+• Password: openstack
+• Primary project: sales-crm
+• Domain: Default
+• Enabled: True
+```
+
+Objective 3 : Assign a Role user to User amy in Project sales-crm.
+
+Objective 4 :Create a New Domain:
+```
+• Domain name: german-sub
+• Description: Domain for German Subsidiary Projects
+```
+
+Objective 5 : Create a New Project in non-default domain:
+```
+• Name: german-rnd
+• Description: R&D Project for German Subsidiary
+• Domain: german-sub
+• Enabled: True
+• Default Quotas
+```
+
+Objective 6 : Create a New User in non-default domain:
+```
+• User name: toby
+• Description: Toby - Admin User for Germain Subsidiary Projects
+• Email: toby@coa.lab
+• Password: openstack
+• Domain: german-sub
+• Primary project: german-rnd
+• Enabled: True
+```
+
+Objective 7: Create a New Role in Default domain:
+```
+• Role name: ops
+• Domain: Default
+• Add an additional role ops to User amy in Project sales-crm.
+```
+
+Objective 8: Create a Group in Default domain:
+```
+• Name: developers
+• Description: Developers
+• Domain: Default
+• Add User john to Group developers.
+```
+
+Objective 9: Create a group in non-default domain:
+```
+• Name: admins
+• Description: Admin Users in German Subsidiary
+• Domain: german-sub
+• Add User toby to Group admins.
+• Assign a Role admin to Group admins in Project german-rnd in Domain german-sub.
+```
+
+Objective 10: Create openrc files in /home/coa for Users:
+```
+• john
+• amy
+• lisa
+• toby
+```
