@@ -27,4 +27,4 @@ yum install -y centos-release-openstack-train
 yum update -y
 yum install openstack-packstack -y 
 
-packstack --answer-file 2020Oct20-answer.conf
+packstack --answer-file 2020Oct21-answer.conf
