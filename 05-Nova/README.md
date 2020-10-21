@@ -1,4 +1,4 @@
-#Nova Introduction
+# Nova Introduction
 
 ## Nova in Horizon Dashboard
 
