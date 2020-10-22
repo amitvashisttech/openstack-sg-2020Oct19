@@ -127,3 +127,51 @@ pg /mnt2/file.txt
 ```
 Detach the Volume demo-vol4 and Shutdown test-vm1 Instance.
 ```
+
+# 
+Managing Volumes on Command Line
+
+Objective 1 : Scope amy/sales-crm.
+```
+Create a New Volume:
+• Name: sales-vol1
+• Description: Database Volume for sales-crm Project
+• Volume Source: empty volume
+• Type: no volume type
+• Size: 1
+Start the Instance insta2.
+Attach the Volume sales-vol1 to Instance insta2. Check the device name.
+```
+
+Objective 2: Scope amy/sales-crm.
+
+```
+Login to Instance insta2.
+Create ext3 type filesystem on newly attached Volume:
+
+sudo mkfs.ext3 /dev/vdb
+Mount the Volume:
+sudo mount /dev/vdb /mnt
+Create a file with Instance “stamp”:
+hostname >> /mnt/file.txt
+date >> /mnt/file.txt
+Verify the file:
+pg /mnt/file.txt
+Unmount the Volume and Detach from the Instance.
+```
+
+Objective 3: Scope: amy/sales-crm.
+```
+Create a New Snapshot sales-vol1-snap1 of the Volume sales-vol1.
+Create a New Volume from the Snapshot:
+• Name: sales-vol2
+• Volume Source: Snapshot
+• Snapshot Source: sales-vol1-snap1
+```
+
+Objective 4: Scope lisa/crm-dev.
+```
+Create a Volume Type sales-vol-type-2 to enable Volume scheduling to Backend LVM-2.
+```
+
+
