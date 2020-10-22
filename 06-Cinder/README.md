@@ -128,8 +128,7 @@ pg /mnt2/file.txt
 Detach the Volume demo-vol4 and Shutdown test-vm1 Instance.
 ```
 
-# 
-Managing Volumes on Command Line
+# Managing Volumes on Command Line
 
 Objective 1 : Scope amy/sales-crm.
 ```
