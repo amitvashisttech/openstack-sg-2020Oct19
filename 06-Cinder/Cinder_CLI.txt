@@ -1,0 +1,41 @@
+    1  ls
+    2  source keystonerc_amy 
+    3  oc volume list 
+    4  oc volume create --size 1 --description "Test volume sales-crm"
+    5  oc volume create --size 1 --description "Test volume sales-crm" sales-vol1
+    6  oc volume list 
+    7  oc server list 
+    8  oc server start insta2 
+    9  oc server list 
+   10  oc server show insta2
+   11  oc server add volume insta2 sales-vol1
+   12  oc server show insta2
+   13  oc volume list 
+   14  ip netns 
+   15  oc server list 
+   16  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ping 10.20.1.178
+   17  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ssh cirros@10.20.1.178
+   18  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ssh root@10.20.1.178
+   19  ls
+   20  oc server show insta2
+   21  oc server remove volume insta2 472186a5-bc3b-4643-864e-c566a9009131
+   22  oc server show insta2
+   23  oc snapshot list 
+   24  oc snapshots list 
+   25  oc volume snapshot  
+   26  oc volume snapshot   list 
+   27  oc volume snapshot  create --name sales-vol1-snap1 sales-vol1
+   28  oc volume snapshot  create --volume sales-vol1 sales-vol1-snap1
+   29  oc volume snapshot   list 
+   30  history 
+   31  oc volume create --size 1 --snapshot sales-vol1-snap1 sales-vol2
+   32  oc snapshots list 
+   33  oc volume snapshot list 
+   34  oc volume list 
+   35  history 
+   36  ls
+   37  cd openstack-sg-2020Oct19/
+   38  ls
+   39  cd 06-Cinder/ 
+   40  ls
+   41  history > Cinder_CLI.txt
