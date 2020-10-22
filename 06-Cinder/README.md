@@ -89,3 +89,41 @@ Objective 8: Scope: lisa/crm-dev.
 ```
 Accept the Volume Transfer, using the Transfer ID and Authorization ID noted in Objective 7.
 ```
+Objective 9: Scope: lisa/crm-dev.
+
+```
+Create a Volume Type LUKS-1 to accomodate Volume Encryption.
+Create Volume Encryption:
+• Provider: nova.volume.encryptors.luks.LuksEncryptor
+• Control Location: front-end
+• Cipher: aes-xts-plain64
+• Key size: 256
+Create a New Volume encrypted-vol1 of type LUKS-1 and size 1.
+```
+
+Objective 10: Scope demo/demo.
+```
+Create a Backup of Volume demo-vol1.
+```
+```
+Create a New Empty Volume:
+• Name: demo-vol4
+• Description: Backup Restore Volume for demo Project
+• Volume Source: empty volume
+• Type: no volume type
+• Size: 1
+```
+```
+Restore Backup of demo-vol1 to demo-vol4.
+Start up the test-vm1 Instance, Attach and mount the Volume demo-vol4 in /mnt2 directory.
+```
+```
+Create a file with Instance "stamp":
+hostname >> /mnt2/file.txt
+date >> /mnt2/file.txt
+Verify the file:
+pg /mnt2/file.txt
+```
+```
+Detach the Volume demo-vol4 and Shutdown test-vm1 Instance.
+```
