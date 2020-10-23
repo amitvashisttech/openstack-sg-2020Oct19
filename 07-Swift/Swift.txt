@@ -1,0 +1,104 @@
+    1  ls
+    2  cd openstack-sg-2020Oct19/
+    3  ls
+    4  mkdir 07-Swift
+    5  ls
+    6  echo "README.md"
+    7  ls
+    8  git pull 
+    9  git add . ; git commit -m "07-Swift"; git push 
+   10  cd 
+   11  cd /tmp/
+   12  ls
+   13  wget http://172.31.0.110:8080/v1/AUTH_3b4b6cb242ca48c69d7aec888eee6773/sales-dev-photos/amy-kp.pem
+   14  ls
+   15  cat amy-kp.pem 
+   16  cd 
+   17  ls
+   18  cd openstack-sg-2020Oct19/
+   19  ls
+   20  cd 07-Swift/
+   21  ls
+   22  cat ../README.md 
+   23  cp -rf ../README.md .
+   24  ls
+   25  cd - 
+   26  ls
+   27  cp -rf README.md 07-Swift/
+   28  git add . ; git commit -m "07-Swift"; git push 
+   29  ls
+   30  cd ..
+   31  ls
+   32  cd labs/
+   33  ls
+   34  cd ..
+   35  ls
+   36  cat labs/red_prompt.sh 
+   37  ls
+   38  source keystonerc_amy 
+   39  swift post --help
+   40  swift list 
+   41  swift stat sales-bucket
+   42  swift post -r "sales-crm:*" -w "sales-crm:*" sales-bucket-2
+   43  swift list 
+   44  swift stat sales-bucket-2
+   45  swift stat volumebackups
+   46  ls
+   47  swift upload sales-bucket-2 labs/red_prompt.sh 
+   48  swift stat sales-bucket-2
+   49  history 
+   50  ls
+   51  source keystonerc_lisa 
+   52  ls
+   53  echo  "Welcome to Swift CLI Demos" > labs/yellow_prompt.sh 
+   54  ls
+   55  swift post public-container
+   56  swift stat public-container
+   57  swift post -r ".r:*,.rlistings" public-container
+   58  swift stat public-container
+   59  ls
+   60  swift upload public-container labs/yellow_prompt.sh 
+   61  swift stat public-container
+   62  cd /tmp/
+   63  ls
+   64  swift download public-container
+   65  ls
+   66  cat labs/yellow_prompt.sh 
+   67  ls
+   68  cd 
+   69  ls
+   70  source keystonerc_amy 
+   71  ls
+   72  hostname >> testing ; date >> testing 
+   73  cat testing 
+   74  swift list 
+   75  swift upload sales-bucket-2 testing 
+   76  swift stat sales-bucket-2
+   77* swift post sales-bucket-2 testing -
+   78  swift stat sales-bucket-2
+   79  swift stat sales-bucket-2/testing 
+   80  swift stat sales-bucket-2
+   81  swift stat sales-bucket-2 testing 
+   82  swift stat sales-bucket-2
+   83  swift download sales-bucket-2 testing
+   84  swift list sales-bucket-2 testing
+   85  swift sales-bucket-2 testing 
+   86  swift list sales-bucket-2 
+   87  swift upload sales-bucket-2 testing 
+   88  swift list sales-bucket-2 
+   89  swift stat sales-bucket-2 testing 
+   90  date
+   91  date --date "Fri Oct 23 03:43:57 UTC 2020" +%s
+   92  date --date "Fri Oct 24 03:43:57 UTC 2020" +%s
+   93   date --date "Fri Oct 23 03:43:57 UTC 2020" +%s
+   94   date --date "Fri Oct 23 03:50:57 UTC 2020" +%s
+   95  swift post sales-bucket-2 testing -H "X-Delete-At:1603425057"
+   96  swift stat sales-bucket-2 testing 
+   97  ls
+   98  history 
+   99  ls
+  100  cd openstack-sg-2020Oct19/
+  101  ls
+  102  cd 07-Swift/
+  103  ls
+  104  history > Swift.txt
