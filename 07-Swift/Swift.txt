@@ -102,3 +102,26 @@
   102  cd 07-Swift/
   103  ls
   104  history > Swift.txt
+  105  cd ../
+  106  ls
+  107  git add . ; git commit -m "07-Swift"; git push 
+  108  git pull 
+  109  git add . ; git commit -m "07-Swift"; git push 
+  110  date
+  111  swift stat sales-bucket-2 testing 
+  112  swift download  sales-bucket-2 testing 
+  113  swift post  sales-bucket-2 testing -H "X-Remove-Delete-At:"
+  114  ls
+  115  cd 
+  116  ls
+  117  mv testing testing2 
+  118  swift upload sales-bucket-2 testing2 
+  119   date --date "Fri Oct 23 03:50:57 UTC 2020" +%s
+  120   date --date "Fri Oct 24 03:50:57 UTC 2020" +%s
+  121  date -d @1603511457
+  122  swift post sales-bucket-2 testing2 -H "X-Delete-At:1603511457"
+  123  swift stat sales-bucket-2 testing2
+  124  swift post sales-bucket-2 testing2 -H "X--Remove-Delete-At:"
+  125  swift stat sales-bucket-2 testing2
+  126  history 
+  127  history > openstack-sg-2020Oct19/07-Swift/Swift.txt 
