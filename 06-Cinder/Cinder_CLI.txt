@@ -39,3 +39,118 @@
    39  cd 06-Cinder/ 
    40  ls
    41  history > Cinder_CLI.txt
+    1  ls
+    2  source keystonerc_amy 
+    3  oc volume list 
+    4  oc volume create --size 1 --description "Test volume sales-crm"
+    5  oc volume create --size 1 --description "Test volume sales-crm" sales-vol1
+    6  oc volume list 
+    7  oc server list 
+    8  oc server start insta2 
+    9  oc server list 
+   10  oc server show insta2
+   11  oc server add volume insta2 sales-vol1
+   12  oc server show insta2
+   13  oc volume list 
+   14  ip netns 
+   15  oc server list 
+   16  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ping 10.20.1.178
+   17  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ssh cirros@10.20.1.178
+   18  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ssh root@10.20.1.178
+   19  ls
+   20  oc server show insta2
+   21  oc server remove volume insta2 472186a5-bc3b-4643-864e-c566a9009131
+   22  oc server show insta2
+   23  oc snapshot list 
+   24  oc snapshots list 
+   25  oc volume snapshot  
+   26  oc volume snapshot   list 
+   27  oc volume snapshot  create --name sales-vol1-snap1 sales-vol1
+   28  oc volume snapshot  create --volume sales-vol1 sales-vol1-snap1
+   29  oc volume snapshot   list 
+   30  history 
+   31  oc volume create --size 1 --snapshot sales-vol1-snap1 sales-vol2
+   32  oc snapshots list 
+   33  oc volume snapshot list 
+   34  oc volume list 
+   35  history 
+   36  ls
+   37  cd openstack-sg-2020Oct19/
+   38  ls
+   39  cd 06-Cinder/ 
+   40  ls
+   41  history > Cinder_CLI.txt
+   42  cd ..
+   43  ls
+   44  git add . ; git commit -m "06-Cinder"; git push 
+   45  git pull 
+   46  git add . ; git commit -m "06-Cinder"; git push 
+   47  history 
+   48  oc volume type list 
+   49  oc volume type create --property --help
+   50  oc volume type create --property volume_backend_name=lvm-2 sales=vol-type-2
+   51  pwd 
+   52  cd 
+   53  source keystonerc_lisa 
+   54  oc volume type create --property volume_backend_name=lvm-2 sales=vol-type-2
+   55  oc volume list 
+   56  oc volume type list 
+   57  oc volume type delete sales=vol-type-2
+   58  oc volume type create --property volume_backend_name=lvm-2 sales-vol-type-2
+   59  oc volume type list 
+   60  cat keystonerc_lisa 
+   61  ls
+   62  cinder quota-show crm-dev
+   63  cinder quota-usage crm-dev
+   64  cinder quota-update volumes 50 crm-dev
+   65  cinder quota-update --volumes 50 crm-dev
+   66  ls
+   67  source keystonerc_demo 
+   68  oc image list 
+   69  oc volume list 
+   70  oc volume create --size 1 --image cirros --description "Volume Created from Cirros Image" sales-vol3
+   71  oc volume list 
+   72  oc server create --volume sales-vol3 --flavor m1.tiny --security-group default --security-group sales-crm-sg2 --nic net-id=demo-net
+   73  oc security group list 
+   74  oc network list 
+   75  oc server create --volume sales-vol3 --flavor m1.tiny --security-group default --security-group sales-crm-sg2 --nic net-id="c6373b23-9932-4775-a77c-a32d6d3274d2"
+   76  oc server create --volume sales-vol3 --flavor m1.tiny --security-group default --security-group sales-crm-sg2 --nic net-id="c6373b23-9932-4775-a77c-a32d6d3274d2" sales-vm3
+   77  oc server create --volume sales-vol3 --flavor m1.tiny --security-group default --security-group sales-crm-sg2 --nic net-id="e8832eca-7f7a-4707-9271-cdc7f91f8488" sales-vm3
+   78  oc network list 
+   79  oc server create --volume sales-vol3 --flavor m1.tiny --security-group default --security-group sales-crm-sg2 --nic net-id="2adb4d50-428e-4e26-804b-8bcdcca1a23a" sales-vm3
+   80  oc security group list 
+   81  oc project list 
+   82  oc server create --volume sales-vol3 --flavor m1.tiny --security-group "d7ac1172-b445-4091-8f44-d11ea2131ece" --security-group demo-sg --nic net-id="2adb4d50-428e-4e26-804b-8bcdcca1a23a" sales-vm3
+   83  oc project list 
+   84  oc volume list 
+   85  cinder tranfer-create demo-vol1
+   86  cinder transfer-create demo-vol1
+   87  source keystonerc_lisa 
+   88  oc volume list 
+   89  cinder transfer-accept --help
+   90  oc volume list 
+   91  cinder transfer-accept 0eb3e50e-6eee-4dd0-ace8-80b476a2ffbe 4af842a3fcb0a6e5
+   92  oc volume list 
+   93  oc volume type create crm-dev-encrypted
+   94  oc volume type list 
+   95  oc volume list 
+   96  cinder encryption-type-create --cipher ase-xts-plain64 --key_size 256 --control_location front-end crm-dev-encrypted nova.volume.encryptors.luks.LuksEncryptor
+   97  oc volume type show crm-dev-encrypted 
+   98  oc volume create --size 1 --type crm-dev-encrypted sales-vol4 
+   99  ls
+  100  source keystonerc_amy 
+  101  ls
+  102  oc volume list 
+  103  oc volume backup create --name backup-sales-vol1 sales-vol1
+  104  oc volume backup list 
+  105  oc volume create --size 1 --description "Backup Restore Volume" sales-vol5 
+  106  oc volume backup list 
+  107  oc volume list 
+  108  oc volume backup restore backup-sales-vol1 sales-vol5
+  109  oc server list 
+  110  oc server add volume insta2 sales-vol5
+  111  ip netns  exec ovnmeta-422d0375-438b-49db-b870-615b50eacd45 ssh root@10.20.1.178
+  112  oc server remove volume insta2 sales-vol5
+  113  oc server stop insta2
+  114  ls
+  115  history >> openstack-sg-2020Oct19/06-Cinder/Cinder_CLI.txt 
