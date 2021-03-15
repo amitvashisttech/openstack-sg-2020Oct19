@@ -1,0 +1,67 @@
+    1  ip addr 
+    2  cd /etc/sysconfig/network-scripts/
+    3  ls
+    4  cp -rf ifcfg-eth0 ifcfg-eth1
+    5  vim ifcfg-eth1 
+    6  vi ifcfg-eth1 
+    7  service network restart
+    8  ping 10.0.0.41
+    9  ls
+   10  cat /etc/hosts
+   11  vim /etc/hosts
+   12  vi /etc/hosts
+   13  vim /etc/ssh/sshd_config 
+   14  vi /etc/ssh/sshd_config 
+   15  passwd 
+   16  service sshd restart
+   17  cd /home/vagrant/
+   18  ls
+   19  ls -a 
+   20  yum install -y python-devel libffi-devel gcc openssl-devel libselinux-python
+   21  yum install -y ansible
+   22  yum install -y epel-release
+   23  yum install -y ansible
+   24  ansible --version 
+   25  ls
+   26  python get-pip.py 
+   27  ls
+   28  pip install kolla-ansible==9.1.0 --ignore-installed PyYAML
+   29  mkdir -p /etc/kolla
+   30  cp -r /usr/share/kolla-ansible/etc_examples/kolla/* /etc/kolla
+   31  cd /etc/kolla/
+   32  ls
+   33  cd ..
+   34  ls
+   35  cd 
+   36  ls
+   37  vim /etc/ansible/ansible.cfg
+   38  vi /etc/ansible/ansible.cfg
+   39  kolla-genpwd
+   40  cat /etc/kolla/passwords.yml 
+   41  sed -i 's#keystone_admin_password:.*#keystone_admin_password: kolla#g' /etc/kolla/passwords.yml
+   42  cat /etc/kolla/passwords.yml | grep keystone_admin_password
+   43  cp /etc/kolla/globals.yml{,.bak}
+   44  ls
+   45  cp -rf /home/vagrant/kolla/globals.yml /etc/kolla/
+   46  cp -rf /home/vagrant/kolla/multinode /etc/kolla/
+   47  ls
+   48  kolla-ansible -i /etc/kolla/multinode bootstrap-servers
+   49  cd /home/vagrant/.ssh/
+   50  ls
+   51  cd - 
+   52  kolla-ansible -i /etc/kolla/multinode bootstrap-servers
+   53  kolla-ansible -i /etc/kolla/multinode prechecks
+   54  vi /usr/share/kolla-ansible/ansible/roles/prechecks/tasks/service_checks.yml
+   55  kolla-ansible -i /etc/kolla/multinode prechecks
+   56  kolla-ansible -i /etc/kolla/multinode pull
+   57  kolla-ansible -i /etc/kolla/multinode deploy
+   58  history 
+   59  git clone https://github.com/amitvashisttech/openstack-sg-2020Oct19.git
+   60  yum install git -y 
+   61  git clone https://github.com/amitvashisttech/openstack-sg-2020Oct19.git
+   62  ls
+   63  cd openstack-sg-2020Oct19/
+   64  ls
+   65  cd Kolla/
+   66  ls
+   67  history > history.txt
