@@ -65,3 +65,33 @@
    65  cd Kolla/
    66  ls
    67  history > history.txt
+   68  ls
+   69  cp -rf /etc/kolla/globals.yml .
+   70  cp -rf /etc/kolla/multinode multinode-2 
+   71  mv multinode-2 multinode
+   72  ls
+   73  cd ..
+   74  ls
+   75  git add . ; git commit -m "History.txt"; git push 
+   76  git config --global user.email "amit@example.com"
+   77   git config --global user.name "Amit"
+   78  git add . ; git commit -m "History.txt"; git push 
+   79  ls
+   80  cd Kolla/
+   81  ls
+   82  cat run-kolla_1.sh 
+   83  kolla-ansible post-deploy
+   84  pip install python-openstackclient
+   85  ls
+   86  cat README.md 
+   87  vi /usr/lib/python2.7/site-packages/openstack/utils.py
+   88  vi  /usr/lib/python2.7/site-packages/openstack/cloud/openstackcloud.py
+   89  ls
+   90  ls -ltr  /etc/kolla/admin-openrc.sh
+   91  source /etc/kolla/admin-openrc.sh
+   92  ls
+   93  cp -rf /home/vagrant/kolla/init-runonce . 
+   94  ./init-runonce 
+   95  openstack server create     --image cirros     --flavor m1.tiny     --key-name mykey     --nic net-id=d2a6d8c5-966d-4972-a33b-566aed8e83e3     demo1
+   96  ls
+   97  history > history.txt 
